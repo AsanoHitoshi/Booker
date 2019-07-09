@@ -9,7 +9,7 @@ class BooksController < ApplicationController
   def create
   	newbook = Book.new(newbook_params)
   	newbook.save
-  	redirect_to '/books'
+  	redirect_to book_path(newbook)
   end
 
   def show
@@ -23,6 +23,12 @@ class BooksController < ApplicationController
   	book = Book.find(params[:id])
   	book.update(book_params)
   	redirect_to book_path(book)
+  end
+
+  def destroy
+  	book = Book.find(params[:id])
+  	book.destroy
+  	redirect_to "/books"
   end
 
 private

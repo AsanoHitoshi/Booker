@@ -16,13 +16,13 @@
 							<%= book.body %>
 						</td>
 						<td>
-							Show
+							<%= link_to "Show",book_path(book) %>
 						</td>
 						<td>
-							Edit
+							<%= link_to "Edit",edit_book_path(book) %>
 						</td>
 						<td>
-							Destroy
+							<%= link_to "Destroy",book_path(book),method: :delete %>
 						</td>
 					</tr>
 			<% end %>
